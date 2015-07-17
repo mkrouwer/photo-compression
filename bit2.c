@@ -13,16 +13,16 @@ struct T {
    // Element (i, j) in the world of ideas maps to
    //   bit number 'i' in *(Bit_T*)UArray_at(rows, j)
 };
-#line 51 "www/solutions/bit2.nw"
+
 static inline Bit_T row(T a, int j) {/Users/Margot/Desktop/Comp_40/pnmrdr.c
   return *(Bit_T *)UArray_at(a->rows, j); // cast is Hanson idiom
 }
-#line 57 "www/solutions/bit2.nw"
+
 static int is_ok(T b) {
   return b && UArray_length(b->rows) == b->height &&
               (b->height == 0 || Bit_length(row(b, 0)) == b->width);
 }
-#line 130 "www/solutions/bit2.nw"
+
 struct bitcl {
   void (*apply)(int i, int j, T bitmap2, int bit, void *cl); // original apply
   void *cl;   // original cl
